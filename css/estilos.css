@@ -1,0 +1,166 @@
+:root{
+--color-principal:#3F6212;
+--color-secundario:#4d7c0f;
+--color-fondo:#f9fafb;
+}
+
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+font-family:system-ui;
+}
+
+body{
+background:var(--color-fondo);
+line-height:1.6;
+}
+
+header{
+background:var(--color-principal);
+color:white;
+padding:20px;
+text-align:center;
+}
+
+nav{
+margin-top:10px;
+display: flex;
+justify-content: center;
+gap: 15px;
+flex-wrap: wrap;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-weight:bold;
+padding: 8px 16px;
+border-radius: 20px;
+transition: background 0.3s;
+cursor: pointer;
+}
+
+nav a:hover, nav a.activo {
+background: rgba(255, 255, 255, 0.2);
+}
+
+.logo-header {
+    max-width: 250px;
+    margin-bottom: 10px;
+}
+
+.hero{
+padding:20px;
+text-align:center;
+}
+
+section{
+padding:20px;
+}
+
+.productos{
+display:grid;
+grid-template-columns:1fr;
+gap:15px;
+}
+
+.producto{
+background:white;
+padding:15px;
+border-radius:8px;
+border:1px solid #ddd;
+}
+
+.producto h3{
+color:var(--color-principal);
+}
+
+.boton{
+display:inline-block;
+background:var(--color-principal);
+color:white;
+padding:12px 20px;
+text-decoration:none;
+border-radius:6px;
+margin-top:10px;
+}
+
+.seccion-contenido {
+display: none;
+animation: fadeIn 0.5s;
+}
+
+footer{
+background:#111;
+color:white;
+text-align:center;
+padding:15px;
+margin-top:30px;
+}
+
+footer a{
+color:#9be564;
+text-decoration:none;
+}
+
+/*animacion*/
+@keyframes fadeIn {
+from { opacity: 0; transform: translateY(10px); }
+to { opacity: 1; transform: translateY(0); }
+}
+
+.spot-publicitario {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+.slide {
+  display: none;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+
+/* TABLET */
+
+@media(min-width:600px){
+
+.productos{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+/* DESKTOP */
+
+@media(min-width:1024px){
+
+.productos{
+grid-template-columns:repeat(3,1fr);
+}
+
+}

@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mini-Market Los Hermanos | San Juan Digital 2025</title>
+
+<link rel="stylesheet" href="css/estilos.css">
+
+</head>
+<style>
+    .logo-header {
+        width: 450px; /* ajustado para ser más grande */
+        max-width: 100%; 
+        height: auto; 
+        display: block;
+        margin: 0 auto 20px; 
+    }
+
+    .spot-publicitario {
+        position: relative;
+        max-width: 100%;
+        margin: auto;
+        overflow: hidden;
+        /*fonfo del slide y la sombra translucida*/
+        background-color: #f0f0f0; 
+        border-radius: 15px; 
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); 
+        padding: 10px; 
+    }
+
+    .slide {
+        position: relative;
+        height: 400px;
+        overflow: hidden; 
+        background: #222; 
+        border-radius: 10px; 
+    }
+    /*desenfoque*/
+    .slide-background {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; 
+        filter: blur(15px) brightness(0.7); 
+        transform: scale(1.1); 
+    }
+
+    .slide-foreground {
+        position: relative; 
+        width: 100%;
+        height: 100%;
+        object-fit: contain; 
+    }
+
+    .fade {
+        animation-name: fade;
+        animation-duration: 1.5s;
+    }
+
+    @keyframes fade {
+        from {opacity: .4}
+        to {opacity: 1}
+    }
+
+    /*estilo de los productos*/
+    .productos {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 20px;
+        padding: 20px 0;
+    }
+
+    .producto {
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 15px;
+        text-align: center;
+        background-color: #fff;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        transition: transform 0.2s;
+    }
+
+    .producto:hover {
+        transform: translateY(-5px);
+    }
+
+    .producto-imagen {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 10px;
+    }
+
+    .icono-seccion {
+        width: 60px; 
+        height: auto;
+        display: block;
+        margin: 10px 0; 
+        transition: transform 0.2s;
+    }
+
+    .icono-seccion:hover {
+        transform: scale(1.1);
+    }
+
+    /*poner la lista al lado*/
+    .contenedor-tienda {
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+    }
+
+    .columna-productos {
+        flex: 3; 
+    }
+
+    .columna-lista {
+        flex: 1; 
+        background-color: #f8f9fa;
+        padding: 20px;
+        border: 2px solid #28a745;
+        border-radius: 10px;
+        position: sticky; 
+        top: 20px;
+        min-width: 250px;
+    }
+
+    .boton-agregar {
+        background-color: #28a745;
+        color: white;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100%;
+    }
+
+    .boton-agregar:hover {
+        background-color: #218838;
+    }
+
+    .item-lista {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #ddd;
+        padding: 5px 0;
+        font-size: 0.9em;
+    }
+
+    @media (max-width: 768px) {
+        .contenedor-tienda { flex-direction: column; }
+    }
+</style>
+
+<body>
+
+<header>
+    <img src="img/losHermanos_MiniMarket.png" alt="Mini Market Los Hermanos Logo" class="logo-header">
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#productos">Productos</a>
+    </nav>
+</header>
+
+<main>
+    <div id="inicio" class="seccion-contenido" style="display: block;">
+        <section class="hero">
+            
+            <div class="spot-publicitario">
+
+                <div class="slide fade">
+                    <img class="slide-background" src="img/panduro.png" alt="">
+                    <img class="slide-foreground" src="img/panduro.png" alt="Anuncio de Pan Duro">
+                </div>
+            
+                <div class="slide fade">
+                    <img class="slide-background" src="img/desyuno.png" alt="">
+                    <img class="slide-foreground" src="img/desyuno.png" alt="Anuncio de Desayuno">
+                </div>
+            
+                <div class="slide fade">
+                    <img class="slide-background" src="img/apoya_tu_seleccion.png" alt="">
+                    <img class="slide-foreground" src="img/apoya_tu_seleccion.png" alt="Anuncio de Apoya tu selección">
+                </div>
+
+                <div class="slide fade">
+                    <img class="slide-background" src="img/neveravacia.png" alt="">
+                    <img class="slide-foreground" src="img/neveravacia.png" alt="Anuncio de Nevera Vacía">
+                </div>
+            
+            </div>
+            <br>
+            
+            <div style="text-align:center">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+            <p>
+                Mini-Market Los Hermanos es una tienda de barrio donde encuentras alimentos,
+                bebidas y productos básicos del hogar a precios accesibles para la comunidad.
+            </p>
+        </section>
+
+        <section id="horario">
+            <h2>Horario</h2>
+            <p>Abierto todos los días</p>
+            <p>7:00 AM – 9:00 PM</p>
+        </section>
+
+        <section id="ubicacion">
+            <h2>Ubicación</h2>
+            <p>Calle Principal #123, Guachupita</p>
+            <a href="https://maps.google.com" target="_blank">
+                <img src="img/maps.png" alt="Mapa de ubicación" class="icono-seccion">
+                
+            </a>
+        </section>
+
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <a class="boton" href="https://wa.me/18095550130" target="_blank">
+                Escribir por WhatsApp
+            </a>
+            <a href="https://wa.me/18095550130" target="_blank">
+                
+            </a>
+        </section>
+    </div>
+
+    <div id="productos" class="seccion-contenido">
+        <section id="productos-dinamicos">
+            <h2>Busca lo que necesites</h2>
+            <input type="search" id="buscador" placeholder="Ej: Arroz, Leche, Pan...">
+
+            <section id="inventario-admin" style="margin: 15px 0; border: 2px solid #28a745; border-radius:10px; padding:15px; background:#fefefc;">
+                <h3>Administración de Inventario</h3>
+                <form id="form-agregar-producto" style="display:flex;flex-wrap:wrap;gap:8px;align-items:flex-end;">
+                    <label style="flex:1;min-width:120px;">Nombre:<br><input id="input-nombre" required></label>
+                    <label style="width:100px;">Precio:<br><input id="input-precio" type="number" step="0.01" min="0" required></label>
+                    <label style="width:100px;">Cantidad:<br><input id="input-cantidad" type="number" min="1" value="1" required></label>
+                    <button type="submit" style="background:#28a745;color:#fff;border:none;padding:8px 12px;border-radius:5px;cursor:pointer;">Agregar producto</button>
+                </form>
+                <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap;">
+                    <label>Buscar:<br><input id="input-buscar-inventario" placeholder="Nombre del producto" style="width:100%"></label>
+                </div>
+                <div id="inventario-mensaje" style="margin-top:10px;color:#155724;background:#d4edda;border:1px solid #c3e6cb;padding:8px;border-radius:4px;display:none;"></div>
+                <div id="inventario-container" style="margin-top:12px;"></div>
+            </section>
+            
+            <div class="contenedor-tienda">
+                
+                <div class="productos columna-productos" id="lista-productos">
+                <div class="producto">
+                    <img src="img/arroz.jpg" alt="Arroz" class="producto-imagen">
+                    <h3>Arroz</h3>
+                    <p>RD$40.00/lb</p>
+                </div>
+
+                <div class="producto">
+                    <img src="img/sardinas.jpeg" alt="Sardinas" class="producto-imagen">
+                    <h3>Sardinas</h3>
+                    <p>RD$33.00/unidad</p>
+                </div>
+
+                <div class="producto">
+                    <img src="img/fileteDorado.jpg" alt="Filete de Dorado" class="producto-imagen">
+                    <h3>Filete de Dorado</h3>
+                    <p>RD$200.00/lb</p>
+                </div>
+
+                <div class="producto">
+                    <img src="img/bacalao.jpg" alt="Miga de bacalao" class="producto-imagen">
+                    <h3>Miga de bacalao</h3>
+                    <p>RD$165.00</p>
+                </div>
+
+                <div class="producto">
+                    <img src="img/camarones.jpg" alt="Paquete de camarones" class="producto-imagen">
+                    <h3>Paquete de camarones</h3>
+                    <p>RD$350.00</p>
+                </div>
+
+                <div class="producto">
+                    <img src="img/chilloCriollo.jpg" alt="Chillo Criollo" class="producto-imagen">
+                    <h3>Chillo Criollo</h3>
+                    <p>RD$415.00/unidad</p>
+                </div>
+
+                <div class="producto">
+                    <img src="img/habichuelasRojas.png" alt="Habichuelas Rojas" class="producto-imagen">
+                    <h3>Habichuelas Rojas</h3>
+                    <p>RD$150.00/800g</p>
+                </div>
+
+                <div class="producto">
+                    <img src="img/lecheEvaporada.png" alt="Leche Evaporada" class="producto-imagen">
+                    <h3>Leche Evaporada</h3>
+                    <p>RD$60.00/lb</p>
+                </div>
+
+                <div class="producto">
+                    <img src="img/azucarCrema.png" alt="Azucar Crema" class="producto-imagen">
+                    <h3>Azucar Crema</h3>
+                    <p>RD$40.00/lb</p>
+                </div>
+
+                <div class="producto">
+                    <img src="img/pasas.jpg" alt="Paquete de pasas" class="producto-imagen">
+                    <h3>Paquete de pasas 1oz</h3>
+                    <p>RD$27.00</p>
+                </div>
+
+                <div class="producto">
+                    <img src="img/galletas.jpg" alt="Galletas" class="producto-imagen">
+                    <h3>Galletas</h3>
+                    <p>RD$25.00/unidad</p>
+                </div>
+
+                <div class="producto">
+                    <img src="img/puerco.jpg" alt="Paleta de Puerco" class="producto-imagen">
+                    <h3>Paleta de Puerco</h3>
+                    <p>RD$99.00/lb</p>
+                </div>
+
+                <div class="producto">
+                    <img src="img/papasFritas.jpg" alt="Papas Fritas" class="producto-imagen">
+                    <h3>Papas Fritas</h3>
+                    <p>RD$30.00/bolsa</p>
+                </div>
+
+                <div class="producto">
+                    <img src="img/platanitos.png" alt="Platanitos" class="producto-imagen">
+                    <h3>Platanitos</h3>
+                    <p>RD$20.00/unidad</p>
+                </div>
+
+                <div class="producto">
+                    <img src="img/Nachos-Fiesta.png" alt="Nachos Picantes" class="producto-imagen">
+                    <h3>Nachos Picantes</h3>
+                    <p>RD$25.00/bolsa</p>
+                </div>
+
+                <div class="producto">
+                    <img src="img/vinoTinto.png" alt="Vino tinto" class="producto-imagen">
+                    <h3>Vino tinto</h3>
+                    <p>RD$400.00/botella</p>
+                </div>
+
+                <div class="producto">
+                    <img src="img/cerveza.jpg" alt="Cerveza 355ML" class="producto-imagen">
+                    <h3>Cerveza 355ML</h3>
+                    <p>RD$110.00</p>
+                </div>
+
+                <div class="producto">
+                    <img src="img/whiskey.png" alt="Whisky 1L" class="producto-imagen">
+                    <h3>Whisky 1L</h3>
+                    <p>RD$950.00</p>
+                </div>
+
+                <div class="producto">
+                    <img src="img/cervezaMalta.png" alt="Cerveza de malta 8oz" class="producto-imagen">
+                    <h3>Cerveza de malta 8oz</h3>
+                    <p>RD$120.00/combo</p>
+                </div>
+
+                <div class="producto">
+                    <img src="img/redBull.png" alt="Bebida Energetica" class="producto-imagen">
+                    <h3>Bebida Energetica</h3>
+                    <p>RD$70.00/unidad</p>
+                </div>
+
+                <div class="producto">
+                    <img src="img/bocinaPortatil.jpg" alt="Bocina Portatil" class="producto-imagen">
+                    <h3>Bocina Portatil</h3>
+                    <p>RD$14,000.00</p>
+                </div>
+
+                <div class="producto">
+                    <img src="img/mesaDomino.jpg" alt="Mesa dominó" class="producto-imagen">
+                    <h3>Mesa dominó</h3>
+                    <p>RD$2,500.00</p>
+                </div>
+
+                <div class="producto">
+                    <img src="img/huevos.jpg" alt="Huevos" class="producto-imagen">
+                    <h3>Huevos</h3>
+                    <p>RD$200.00/cartón</p>
+                </div>
+
+                <div class="producto">
+                    <img src="img/refrescos.jpg" alt="Refresco" class="producto-imagen">
+                    <h3>Refrescos</h3>
+                    <p>RD$35.00/unidad  </p>
+                </div>
+
+                <div class="producto">
+                    <img src="img/panSobao.png" alt="Pan Sobao" class="producto-imagen">
+                    <h3>Pan</h3>
+                    <p>RD$10.00/unidad</p>
+                </div>
+
+                <div class="producto">
+                    <img src="img/lecheArtesanal.jpg" alt="Leche Artesanal" class="producto-imagen">
+                    <h3>Leche</h3>
+                    <p>RD$70.00/lb </p>
+                </div>
+
+                <div class="producto">
+                    <img src="img/quedoDominicano.jpg" alt="Queso Dominicano" class="producto-imagen">
+                    <h3>Queso de Hoja</h3>
+                    <p>RD$120.00/ unidad</p>
+                </div>
+
+                <div class="producto">
+                    <img src="img/aceiteOliva.jpg" alt="Aceite de Oliva" class="producto-imagen">
+                    <h3>Aceite</h3>
+                    <p>RD$150.00/botella</p>
+                </div>
+
+                <div class="producto">
+                    <img src="img/salami.jpg" alt="Salami" class="producto-imagen">
+                    <h3>Salami</h3>
+                    <p>RD$80.00/lb</p>
+                </div>
+                </div>
+
+                <aside class="columna-lista">
+                    <h3>📝 Mi Lista</h3>
+                    <div id="items-lista">
+                        <p>No hay productos agregados.</p>
+                        <p>Solo Pagos en efectivo</p>
+                    </div>
+                    <hr>
+                    <h3>Total: <span id="total-precio">RD$0.00</span></h3>
+                    <button onclick="borrarLista()" style="background:#dc3545; color:white; border:none; padding:5px; border-radius:5px; width:100%; margin-top:10px; cursor:pointer;">Borrar Todo</button>
+                </aside>
+
+            </div> 
+        </section>
+    </div>
+
+</main>
+
+
+<footer>
+
+<p>
+
+<a href="#">San Juan Digital 2025 – AC-SJM</a>
+</p>
+
+</footer>
+
+<script src="js/algoritmoInventario.js"></script>
+<script src="js/script.js"></script>
+
+</body>
+</html>
